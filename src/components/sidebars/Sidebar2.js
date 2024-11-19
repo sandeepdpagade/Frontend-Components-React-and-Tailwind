@@ -69,7 +69,7 @@ const Sidebar = () => {
         aria-label="Sidebar"
       >
         <div className="h-full px-3 pb-4 overflow-y-auto bg-white">
-          <ul className="space-y-2 font-semibold">
+          <ul className="space-y-2 font-semibold mb-20">
             {navItems.map((item) => (
               <li key={item.path}>
                 <NavLink

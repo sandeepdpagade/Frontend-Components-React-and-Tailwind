@@ -1,5 +1,28 @@
 import React from "react";
+import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
+
+// Custom Styled Toggle Switch
+const CustomToggleSwitch = styled(Switch)(({ theme }) => ({
+  "& .MuiSwitch-switchBase.Mui-checked": {
+    color: "#4CAF50", // Active color
+    "&:hover": {
+      backgroundColor: "rgba(76, 175, 80, 0.1)",
+    },
+  },
+  "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track": {
+    backgroundColor: "#4CAF50", // Active background color
+  },
+  "& .MuiSwitch-switchBase": {
+    color: "#FF5252", // Inactive color
+    "&:hover": {
+      backgroundColor: "rgba(255, 82, 82, 0.1)",
+    },
+  },
+  "& .MuiSwitch-track": {
+    backgroundColor: "#FF5252", // Inactive background color
+  },
+}));
 
 // Define a functional component ToggleSwitch
 const ToggleSwitch = ({ checked, onChange }) => {
@@ -14,15 +37,12 @@ const ToggleSwitch = ({ checked, onChange }) => {
     }
   };
 
-
   return (
-    <div>
-      <Switch
-        checked={isChecked}
-        onChange={handleChange}
-        inputProps={{ "aria-label": "controlled" }}
-      />
-    </div>
+    <CustomToggleSwitch
+      checked={isChecked}
+      onChange={handleChange}
+      inputProps={{ "aria-label": "controlled" }}
+    />
   );
 };
 
