@@ -46,12 +46,12 @@ const columns = [
 
 const defaultImage = "https://via.placeholder.com/150x150"; // Default placeholder image
 
-export default function ExampleDatatable() {
+export default function ProductsDatatable() {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
   // Inline rows with example data (with and without images)
-  const rows = [
+  const [rows, setRows] = useState([
     {
       ProductID: "#P1001",
       CreationDate: "2024-01-01",
@@ -92,7 +92,7 @@ export default function ExampleDatatable() {
       ProductPreview: "", // No image uploaded, will use default
       ProductStatus: "active",
     },
-  ];
+  ]);
 
   const navigate = useNavigate();
 
